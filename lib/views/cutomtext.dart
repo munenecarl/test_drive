@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import '../configs/constants.dart';
+import '/configs/constants.dart';
 
-class cutomtitleText extends StatelessWidget {
+class customtitleText extends StatelessWidget {
   final String label;
-  const cutomtitleText({super.key, required this.label});
+  final Color labelColor;
+  final double labelfontSize;
+  const customtitleText(
+      {super.key, required this.label, this.labelColor = greytextColor, this.labelfontSize = 16});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       label,
-      style: TextStyle(
-          color: greytextColor, fontSize: 30, fontWeight: FontWeight.bold),
+      style:  TextStyle(
+          color: labelColor, fontSize: labelfontSize, fontWeight: FontWeight.bold),
     );
   }
 }
+
