@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test_drive/configs/constants.dart';
-import 'package:test_drive/views/customtextfiled.dart';
-import 'package:test_drive/views/cutomtext.dart';
+import 'package:flutter_application_1/configs/constants.dart';
+import 'package:flutter_application_1/views/customtext.dart';
+import 'package:flutter_application_1/views/customtextfilled.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -19,19 +19,36 @@ class Home extends StatelessWidget {
     TextEditingController passwordController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Trial"),
+        title: const Text("Login"),
         backgroundColor: primaryColor,
         foregroundColor: appbartextColor,
         automaticallyImplyLeading: true,
       ),
-      body: Column(
-        children: [
-          cutomtitleText(label: "Username"),
-          customTextField(userFieldController: userNameController),
-          cutomtitleText(label: "Password"),
-          customTextField(userFieldController: passwordController)
-        ],
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(50, 30, 50, 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("assets/images/first.png"),
+              ],
+            ),
+            const SizedBox(height: 20),
+            const Row(mainAxisAlignment: MainAxisAlignment.center,children: [customtitleText(label: "Login Screen",
+            labelColor: primaryColor, 
+            labelfontSize: 30)],),
+            const SizedBox(height: 10),
+             const customtitleText(label: "Username"),
+            customTextField(userFieldController: userNameController),
+             const customtitleText(label: "Password"),
+            customTextField(userFieldController: passwordController)
+          ],
+        ),
       ),
     );
   }
 }
+
