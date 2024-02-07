@@ -11,8 +11,8 @@ class customTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      cursorRadius: Radius.elliptical(5, 0),
       controller: userFieldController,
+      decoration: InputDecoration(border: OutlineInputBorder()),
     );
   }
 }

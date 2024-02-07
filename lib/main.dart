@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/configs/constants.dart';
 import 'package:flutter_application_1/views/customtext.dart';
-import 'package:flutter_application_1/views/customtextfilled.dart';
+import 'package:flutter_application_1/views/customtextfield.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -37,13 +37,19 @@ class Home extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            const Row(mainAxisAlignment: MainAxisAlignment.center,children: [customtitleText(label: "Login Screen",
-            labelColor: primaryColor, 
-            labelfontSize: 30)],),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                customtitleText(
+                    label: "Login Screen",
+                    labelColor: primaryColor,
+                    labelfontSize: 30)
+              ],
+            ),
             const SizedBox(height: 10),
-             const customtitleText(label: "Username"),
+            const customtitleText(label: "Username"),
             customTextField(userFieldController: userNameController),
-             const customtitleText(label: "Password"),
+            const customtitleText(label: "Password"),
             customTextField(userFieldController: passwordController)
           ],
         ),
@@ -51,4 +57,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
